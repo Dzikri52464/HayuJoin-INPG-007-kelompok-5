@@ -1,0 +1,10 @@
+@import url('http://fonts.cdnfonts.com/css/nunito');
+
+*{
+    font-family: 'Nunito', sans-serif;
+}
+
+.nav-item:hover{
+    border-bottom: 2px solid #000;
+}
+
