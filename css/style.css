@@ -4,8 +4,18 @@
     font-family: 'Nunito', sans-serif;
 }
 
+a .bg-primary{
+    background-color: #234CAD !important;
+    height: 40px;
+}
+
+.nav-item{
+    border-bottom: 2px solid #fff;
+}
+
 .nav-item:hover{
     border-bottom: 2px solid #234CAD;
+    transition: all 0.7s;
 }
 
 .navbar-brand.text-primary{
@@ -25,12 +35,9 @@ a.btn-outline-primary{
     color: #234CAD !important;
     font-weight: 700 !important;
     font-size: 18px !important;
-}
-
-a.btn-outline-primary :hover{
-    background-color: #234CAD !important;
-    color: #F2F6FF !important;
-    border: none !important;
+    --bs-btn-hover-color: #234CAD !important;
+    --bs-btn-hover-bg: #F2F6FF !important;
+    transition: all 0.5s;
 }
 
 a.btn-primary{
@@ -39,6 +46,7 @@ a.btn-primary{
     font-weight: 700 !important;
     color: #234CAD !important;
     font-size: 18px !important;
+    transition: all 0.5s;
 }
 
 button .navbar-toggler-icon{
@@ -63,12 +71,25 @@ button.navbar-toggler{
 
 .jumbotron a.btn-outline-primary{
     font-size: 22px !important;
+    transition: all 0.5s;
 }
 
 .svg-jumbotron{
     position: absolute;
     height: 45rem;
     top: 4rem;
+}
+
+.cloud-lock{
+    color: #234CAD;
+}
+
+#product{
+    color: #234CAD;
+}
+
+.product-img{
+    height: 500px !important;
 }
 
 @media screen and (max-width: 1400px){
@@ -113,7 +134,7 @@ button.navbar-toggler{
     }
 
     .jumbotron {
-        position: fixed;
+        position: relative;
         z-index: 9999;
     }
 }
