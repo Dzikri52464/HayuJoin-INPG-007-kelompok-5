@@ -92,6 +92,26 @@ button.navbar-toggler{
     height: 500px !important;
 }
 
+.product-2{
+    overflow: hidden;
+}
+
+.glass{
+    background: rgba(255, 255, 255, 0.22);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(1.5px);
+    -webkit-backdrop-filter: blur(1.5px);
+    border: 1px solid rgba(255, 255, 255, 0.44);
+}
+
+.glass-img{
+    position: relative;
+    height: 450px;
+    top: -300px;
+    right: 75px;
+    z-index: -1;
+}
+
 @media screen and (max-width: 1400px){
     .svg-jumbotron{
         height: 40rem;
