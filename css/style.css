@@ -134,6 +134,69 @@ h3.text-primary{
     color: #234CAD !important;
 }
 
+.plan-bg{
+    background: #F2F6FF;
+    border: 2px solid #ffffff;
+    color: #234CAD;
+    border-radius: 60px;
+}
+
+.plan-bg-hovered{
+    border: 2px solid #234CAD;
+    color: #234CAD;
+    border-radius: 60px;
+}
+
+.plan-btn{
+    background-color: #FFFFFF !important;
+    color: #234CAD !important;
+    font-weight: 700 !important;
+    font-size: 18px !important;
+    --bs-btn-hover-color: #234CAD !important;
+    --bs-btn-hover-bg: #F2F6FF !important;
+    transition: all 0.5s;
+}
+
+.col h1{
+    font: Nunito;
+    font-size: 25px;
+    margin-top: 2ex;
+    margin-bottom: 3ex;
+}
+
+.plan{
+    color: #234CAD;
+}
+
+.col a{
+    margin-top: 1;
+    margin-bottom: 8ex;
+}
+
+.col p{
+    margin-top: 1;
+    margin-bottom: 5ex;
+}
+
+.footer-list h1{
+    color: #234CAD; 
+    font-size: 30px;
+}
+
+.footer-list p{
+    color: #234CAD; 
+    font-size: 18px;
+}
+
+#about {
+    color: #234CAD !important;
+    position: inherit !important;
+}
+
+#pricing {
+    color: #234CAD !important;
+}
+
 @media screen and (max-width: 1400px){
     .svg-jumbotron{
         height: 40rem;
@@ -164,7 +227,7 @@ h3.text-primary{
         filter: blur(8px);
         z-index: -1;
     }
-
+    
     #jumbotron-background #layer{
         background-color: #F2F6FF;
         position: absolute;
@@ -174,70 +237,15 @@ h3.text-primary{
         height: 100%;
         opacity: 0.1;
     }
-
+    
     .jumbotron {
         position: relative;
         z-index: 9999;
     }
 }
 
-#About{
-    color: #234CAD; 
-}
-
-.Priceing{
-    color: #234CAD; 
-}
-
-.bg{
-position: relative;
-left: 0%;
-right: 0%;
-top: 0%;
-bottom: 0%;
-background-size: cover;
-background-repeat: no-repeat;
-background: #F2F6FF;
-color: #234CAD;
-border-radius: 60px;
-margin-left: 5ex;
-margin-bottom: 12ex;
-
-}
-.col h1{
-    font: Nunito;
-    font-size: 25px;
-    margin-top: 2ex;
-    margin-bottom: 3ex;
-}
-.first{
-    height: 48px;
-    left: 31.75%;
-    right: 31.39%;
-    top: calc(50% - 48px/2 - 41px);
-    font-family: 'Nunito';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 56px;
-    line-height: 48px;
-    text-align: center;  
-    color: #234CAD;
-}
-.col a{
-    margin-top: 1;
-    margin-bottom: 8ex;
-}
-
-.col p{
-    margin-top: 1;
-    margin-bottom: 5ex;
-}
-.oke h1{
-    color: #234CAD; 
-    font-size: 30px;
-}
-
-.oke p{
-    color: #234CAD; 
-    font-size: 18px;
+@media screen and (max-width: 768px){
+    #about {
+        margin-top: -325px !important;
+    }
 }
