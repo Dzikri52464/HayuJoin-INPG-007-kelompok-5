@@ -131,7 +131,7 @@ button.navbar-toggler{
         left: 0;
         right: 0;
         bottom: 0;
-        background-image: url(/assets/svg/Jumbotron.svg);
+        background-image: url(../assets/svg/Jumbotron.svg);
         background-position: 0% 25%;
         background-size: cover;
         background-repeat: no-repeat;
@@ -157,4 +157,65 @@ button.navbar-toggler{
         position: relative;
         z-index: 9999;
     }
+}
+
+#About{
+    color: #234CAD; 
+}
+
+.Priceing{
+    color: #234CAD; 
+}
+
+.bg{
+position: relative;
+left: 0%;
+right: 0%;
+top: 0%;
+bottom: 0%;
+background-size: cover;
+background-repeat: no-repeat;
+background: #F2F6FF;
+color: #234CAD;
+border-radius: 60px;
+margin-left: 5ex;
+margin-bottom: 12ex;
+
+}
+.col h1{
+    font: Nunito;
+    font-size: 25px;
+    margin-top: 2ex;
+    margin-bottom: 3ex;
+}
+.first{
+    height: 48px;
+    left: 31.75%;
+    right: 31.39%;
+    top: calc(50% - 48px/2 - 41px);
+    font-family: 'Nunito';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 56px;
+    line-height: 48px;
+    text-align: center;  
+    color: #234CAD;
+}
+.col a{
+    margin-top: 1;
+    margin-bottom: 8ex;
+}
+
+.col p{
+    margin-top: 1;
+    margin-bottom: 5ex;
+}
+.oke h1{
+    color: #234CAD; 
+    font-size: 30px;
+}
+
+.oke p{
+    color: #234CAD; 
+    font-size: 18px;
 }
