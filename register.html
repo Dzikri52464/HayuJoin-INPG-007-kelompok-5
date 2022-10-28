@@ -27,26 +27,29 @@
         </div>
     </header>
     
-    <div class="container text-center px-5 py-3 my-3 mx-auto register">
+    <div class="container text-center px-5 py-3 my-3 mx-auto register" onsubmit="store(); return false">
         <div class="glass p-3 p-lg-5 rounded-5">
             <h1 class="fw-bold mb-3">Register</h1>
             <hr class="text-primary">
             <form class="px-0 px-lg-5" id="formRegister">
                 <div class="mb-3 mx-0 mx-lg-5">
                     <label for="username" class="form-label fw-bold">Username</label>
-                    <input type="text" class="form-control" id="username" placeholder="Please enter your name">
+                    <input type="text" class="form-control mb-2" id="username" placeholder="Please enter your name">
+                    <span class="text-danger" id="usernameError"></span>
                 </div>
                 <div class="mb-3 mx-0 mx-lg-5">
                     <label for="email" class="form-label fw-bold">Email</label>
-                    <input type="email" class="form-control" id="email" placeholder="Please enter your email, ex: name@email.com" aria-describedby="emailHelp">
+                    <input type="email" class="form-control mb-2" id="email" placeholder="Please enter your email, ex: name@email.com" aria-describedby="emailHelp">
+                    <span class="text-danger" id="emailError"></span>
                 </div>
                 <div class="mb-3 mx-0 mx-lg-5">
                     <label for="password" class="form-label fw-bold">Password</label>
-                    <input type="password" class="form-control" id="password" placeholder="Please enter your password">
+                    <input type="password" class="form-control mb-2" id="password" placeholder="Please enter your password">
+                    <span class="text-danger" id="passwordError"></span>
                 </div>
                 <div class="mb-5 mx-0 mx-lg-5">
                     <label for="passwordValidation" class="form-label fw-bold">Verify Password</label>
-                    <input type="password" class="form-control" id="passwordValidation" placeholder="Please enter your password again">
+                    <input type="password" class="form-control mb-2" id="passwordValidation" placeholder="Please enter your password again">
                 </div>
                 <input type="submit" class="btn btn-outline-primary rounded-5 px-5 fw-bold" value="Register">
             </form>
