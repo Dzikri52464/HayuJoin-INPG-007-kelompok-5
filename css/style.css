@@ -112,14 +112,55 @@ button.navbar-toggler{
     z-index: -1;
 }
 
+.register-page{
+    background-image: url(../assets/svg/Jumbotron.svg);
+    background-size: 50%;
+}
+
+.register-page .glass{
+    background: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(1.5px);
+    -webkit-backdrop-filter: blur(1.5px);
+    border: 1px solid rgba(255, 255, 255, 0.44);
+}
+
 .register{
     overflow: hidden;
     color:#234CAD;
 }
 
+.login-page{
+    background-image: url(../assets/svg/CardContent.svg);
+    background-size: 50%;
+}
+
+.login-page .glass{
+    background: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(1.5px);
+    -webkit-backdrop-filter: blur(1.5px);
+    border: 1px solid rgba(255, 255, 255, 0.44);
+}
+
 .login{
     overflow: hidden;
     color:#234CAD;
+}
+
+hr.text-primary{
+    color: #234CAD !important;
+}
+
+form .btn-outline-primary{
+    border: 2px solid #234CAD;
+    border-color: #234CAD !important;
+    color: #234CAD !important;
+    font-weight: 700 !important;
+    font-size: 18px !important;
+    --bs-btn-hover-color: #234CAD !important;
+    --bs-btn-hover-bg: #F2F6FF !important;
+    transition: all 0.5s;
 }
 
 .glass-img-bigger{
@@ -247,5 +288,13 @@ h3.text-primary{
 @media screen and (max-width: 768px){
     #about {
         margin-top: -325px !important;
+    }
+
+    .register-page {
+        background-size: 350px;
+    }
+    
+    .login-page {
+        background-size: 350px;
     }
 }

@@ -10,20 +10,25 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer">
 </head>
-<body>
+<body class="login-page">
     <header>
-        <nav class="navbar navbar-expand-lg py-3 mb-5">
-            <div class="container">
-                <a class="navbar-brand fw-bold text-primary mx-auto" href="index.html">HayuJoin</a>
+        <div class="container-fluid glass py-2">
+            <div class="row justify-content-around">
+                <div class="col-2 my-auto mx-4 mx-sm-auto fs-4">
+                    <a href="index.html" class="ms-0 ms-md-4 btn btn-primary rounded-circle"><i class="fa-solid fa-arrow-left"></i></a>
+                </div>
+                <div class="d-none d-sm-block col-8 text-center">
+                    <a class="navbar-brand fw-bold text-primary" href="index.html">HayuJoin</a>
+                </div>
+                <div class="col-2 my-auto mx-auto text-center">
+                    <a href="register.html" class="btn btn-primary fw-semibold rounded-5 px-4">Sign Up</a>
+                </div>
             </div>
-        </nav>  
-    </header>
-
-    <div class="container w-50 text-center p-5 m-5 mx-auto login">
-        <h1 class="fw-bold mb-3 p-5 rounded-5 glass">Login</h1>
-        <div class="p-0 mb-5">
-            <img src="assets/svg/Product.svg" alt="product" class="glass-img-bigger">
         </div>
+    </header>
+    
+    <div class="container text-center px-5 py-3 my-3 mx-auto login">
+        <h1 class="fw-bold mb-3 p-5 rounded-5 glass">Login</h1>
     </div>
     
     <script src="script/script.js"></script>
