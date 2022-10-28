@@ -237,6 +237,20 @@ h3.text-primary{
 #pricing {
     color: #234CAD !important;
 }
+.input{
+    height: auto;
+    width: 50%;
+    margin: 0 auto;
+    background-color: #F2F6FF;
+    border-radius: 60px;
+}
+.bg-btn{
+    background-color: #234CAD !important;
+    border-radius: 30px;
+}
+.fa-angle-right{
+    color: #F2F6FF;
+}
 
 @media screen and (max-width: 1400px){
     .svg-jumbotron{
