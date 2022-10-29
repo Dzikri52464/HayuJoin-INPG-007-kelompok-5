@@ -141,9 +141,62 @@ if (url.indexOf("register.html") > -1) {
 
 if (url.indexOf("login.html") > -1) {
     var user = JSON.parse(localStorage.getItem('user'));
-    console.log(user);
+    var email = document.getElementById("email");
+    var password = document.getElementById("password");
+    var errorText = document.getElementById("errorText");
+    var errorToast = document.getElementById("errorToast");
+    
+    function login() {
+        if (email.value == user.email){
+            if(password.value == user.password){
+                user.loginStatus = 1;
+                localStorage.setItem('user', JSON.stringify(user));
+                const loginToast = document.getElementById('loggedIn');
+                const toast = new bootstrap.Toast(loginToast);
+                toast.show();
+                console.log(user);
+                setTimeout(function() {
+                    window.location.href = "index.html";
+                }, 2000);
+            } else {
+                errorText.innerHTML = "Password is incorrect";
+                const toast = new bootstrap.Toast(errorToast);
+                toast.show();
+            }
+        } else {
+            errorText.innerHTML = "Email not found";
+            const toast = new bootstrap.Toast(errorToast);
+            toast.show();
+        }
+    }
 }
 
 if (url.indexOf('index.html') > -1) {
-    alert("index");
+    var user = JSON.parse(localStorage.getItem('user'));
+    var userNav = document.getElementById("userNav");
+    if (user.loginStatus == 1){
+        var contactEmail = document.getElementById("contactEmail");
+        contactEmail.value = user.email;
+        var newNav = `
+        <button type="button" class="btn btn-primary fw-semibold rounded px-4 me-2" id="userAccount">${user.name}</button>
+        <button type="button" class="btn btn-primary fw-semibold rounded-5 px-4" onclick="logout()">Logout</button>`
+        userNav.innerHTML = newNav;
+
+        setTimeout(function() {
+            user.loginStatus = 0;
+            localStorage.setItem('user', JSON.stringify(user));
+        }, 180000);
+
+        window.onbeforeunload = function() {
+            user.loginStatus = 0;
+            localStorage.setItem('user', JSON.stringify(user));
+        }
+    } 
+}
+
+function logout() {
+    var user = JSON.parse(localStorage.getItem('user'));
+    user.loginStatus = 0;
+    localStorage.setItem('user', JSON.stringify(user));
+    window.location.href = "login.html";
 }

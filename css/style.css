@@ -49,6 +49,15 @@ a.btn-primary{
     transition: all 0.5s;
 }
 
+button.btn-primary{
+    background-color: #F2F6FF !important;
+    border: none;
+    font-weight: 700 !important;
+    color: #234CAD !important;
+    font-size: 18px !important;
+    transition: all 0.5s;
+}
+
 button .navbar-toggler-icon{
     color: #234CAD !important;
 }
@@ -318,7 +327,7 @@ strong.text-primary{
     #about {
         margin-top: -325px !important;
     }
-
+    
     .register-page {
         background-size: 350px;
     }

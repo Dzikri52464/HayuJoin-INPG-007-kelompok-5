@@ -13,14 +13,14 @@
 <body class="login-page">
     <header>
         <div class="container-fluid glass py-2">
-            <div class="row justify-content-around">
-                <div class="col-2 my-auto mx-4 mx-sm-auto fs-4">
-                    <a href="index.html" class="ms-0 ms-md-4 btn btn-primary rounded-circle"><i class="fa-solid fa-arrow-left"></i></a>
+            <div class="row justify-content-between">
+                <div class="col-6 col-sm-3 my-auto mx-sm-auto ps-5 fs-4">
+                    <a href="index.html" class="ms-0 ms-md-4 btn btn-primary rounded-circle"><i class="fa-solid fa-arrow-left"></i><span class="d-none">back</span></a>
                 </div>
-                <div class="d-none d-sm-block col-8 text-center">
+                <div class="d-none d-sm-block col-6 my-auto text-center">
                     <a class="navbar-brand fw-bold text-primary" href="index.html">HayuJoin</a>
                 </div>
-                <div class="col-2 my-auto mx-auto text-center">
+                <div class="col-6 col-sm-3 my-auto mx-sm-auto pe-5 py-1 text-center">
                     <a href="register.html" class="btn btn-primary fw-semibold rounded-5 px-4">Sign Up</a>
                 </div>
             </div>
@@ -28,7 +28,46 @@
     </header>
     
     <div class="container text-center px-5 py-3 my-3 mx-auto login">
-        <h1 class="fw-bold mb-3 p-5 rounded-5 glass">Login</h1>
+        <div class="glass p-3 p-lg-5 rounded-5">
+            <h1 class="fw-bold mb-3">Login</h1>
+            <hr class="text-primary">
+            <form class="px-0 px-lg-5" id="formRegister" onsubmit="login(); return false">
+                <div class="mb-3 mx-0 mx-lg-5">
+                    <label for="email" class="form-label fw-bold">Email</label>
+                    <input type="email" class="form-control mb-2" id="email" placeholder="Please enter your email, ex: name@email.com">
+                </div>
+                <div class="mb-5 mx-0 mx-lg-5">
+                    <label for="password" class="form-label fw-bold">Password</label>
+                    <input type="password" class="form-control mb-2" id="password" placeholder="Please enter your password">
+                </div>
+                <input type="submit" class="btn btn-outline-primary rounded-5 px-5 fw-bold" value="Login">
+            </form>
+        </div>
+    </div>
+
+    <div class="toast-container position-fixed top-0 start-50 translate-middle-x p-3">
+        <div id="loggedIn" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-header">
+                <img src="assets/icon/icon.png" class="rounded-circle toast-img p-1 me-2" alt="hayujoin">
+                <strong class="me-auto text-primary">Login Success</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+            <div class="toast-body">
+                Successfully logged in, redirecting to home page...
+            </div>
+        </div>
+    </div>
+
+    <div class="toast-container position-fixed top-0 start-50 translate-middle-x p-3">
+        <div id="errorToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-header bg-danger text-white">
+                <img src="assets/icon/icon.png" class="rounded-circle toast-img-error p-1 me-2" alt="hayujoin">
+                <strong class="me-auto text-white">Login Failed</strong>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+            <div class="toast-body" id="errorText">  
+            </div>
+        </div>
     </div>
     
     <script src="script/script.js"></script>

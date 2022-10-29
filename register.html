@@ -15,9 +15,9 @@
         <div class="container-fluid glass py-2">
             <div class="row justify-content-between">
                 <div class="col-6 col-sm-3 my-auto mx-sm-auto ps-5 fs-4">
-                    <a href="index.html" class="ms-0 ms-md-4 btn btn-primary rounded-circle"><i class="fa-solid fa-arrow-left"></i></a>
+                    <a href="index.html" class="ms-0 ms-md-4 btn btn-primary rounded-circle"><i class="fa-solid fa-arrow-left"></i><span class="d-none">back</span></a>
                 </div>
-                <div class="d-none d-sm-block col-6 text-center">
+                <div class="d-none d-sm-block col-6 my-auto text-center">
                     <a class="navbar-brand fw-bold text-primary" href="index.html">HayuJoin</a>
                 </div>
                 <div class="col-6 col-sm-3 my-auto mx-sm-auto pe-5 text-center">
@@ -27,11 +27,11 @@
         </div>
     </header>
     
-    <div class="container text-center px-5 py-3 my-3 mx-auto register" onsubmit="store(); return false">
+    <div class="container text-center px-5 py-3 my-3 mx-auto register">
         <div class="glass p-3 p-lg-5 rounded-5">
             <h1 class="fw-bold mb-3">Register</h1>
             <hr class="text-primary">
-            <form class="px-0 px-lg-5" id="formRegister">
+            <form class="px-0 px-lg-5" id="formRegister" onsubmit="store(); return false">
                 <div class="mb-3 mx-0 mx-lg-5">
                     <label for="username" class="form-label fw-bold">Username</label>
                     <input type="text" class="form-control mb-2" id="username" placeholder="Please enter your name">
