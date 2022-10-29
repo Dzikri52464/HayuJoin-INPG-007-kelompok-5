@@ -33,7 +33,6 @@ if (url.indexOf("register.html") > -1) {
         if (!username.value == '') {
             if (username.value.match(min5) && username.value.match(max10)) {
                 if (!username.value.match(space) && !username.value.match(specialCharacters)) {
-                    user.name = username.value;
                     usernameError.innerHTML = '';
                     usernameCheck = true;
                 } else {
@@ -51,7 +50,6 @@ if (url.indexOf("register.html") > -1) {
         var emailError = document.getElementById("emailError");
         if (!email.value == '') {
             if (email.value.match(emailRegex)) {
-                user.email = email.value;
                 emailError.innerHTML = '';
                 emailCheck = true;
             } else {
@@ -64,6 +62,7 @@ if (url.indexOf("register.html") > -1) {
     
     password.oninput = function() {
         var passwordError = document.getElementById("passwordError");
+        var passwordValidationError = document.getElementById("passwordValidationError");
         if (!password.value == null || !password.value == "") {
             if(password.value.match(lowerCaseLetters)){
                 if(password.value.match(upperCaseLetters)){
@@ -71,15 +70,16 @@ if (url.indexOf("register.html") > -1) {
                         if(password.value.match(min6) && password.value.match(max12)){
                             if(!password.value.match(space) && !password.value.match(specialCharacters)){
                                 if(password.value == passwordValidation.value) {
-                                    user.password = password.value;
                                     passwordError.innerHTML = '';
+                                    passwordValidationError.innerHTML = '';
                                     passwordCheck = true;
                                 } else {
                                     passwordError.innerHTML = "Password does not match";
+                                    passwordValidationError.innerHTML = "Password does not match";
                                     passwordValidation.oninput = function() {
                                         if(password.value == passwordValidation.value){
-                                            user.password = password.value;
                                             passwordError.innerHTML = '';
+                                            passwordValidationError.innerHTML = '';
                                             passwordCheck = true;
                                         }
                                     }
@@ -106,24 +106,42 @@ if (url.indexOf("register.html") > -1) {
     };
     
     function store() {
+        var errorText = document.getElementById("errorText");
+        var errorToast = document.getElementById("errorToast");
         if (usernameCheck){
             if (emailCheck){
                 if (passwordCheck){
-                    console.log(user);
+                    user.name = username.value;
+                    user.email = email.value;
+                    user.password = password.value;
+                    localStorage.setItem('user', JSON.stringify(user));
+                    const registerToast = document.getElementById('registered');
+                    const toast = new bootstrap.Toast(registerToast);
+                    toast.show();
+                    setTimeout(function() {
+                        window.location.href = "login.html";
+                    }, 2000);
                 } else {
-                    alert("Please check your password");
+                    errorText.innerHTML = "Please check your password";
+                    const toast = new bootstrap.Toast(errorToast);
+                    toast.show();
                 }
             } else {
-                alert("Please check your email");
+                errorText.innerHTML = "Please check your email";
+                const toast = new bootstrap.Toast(errorToast);
+                toast.show();
             }
         } else {
-            alert("Please check your username");
+            errorText.innerHTML = "Please check your username";
+            const toast = new bootstrap.Toast(errorToast);
+            toast.show();
         }
     }
 }
 
 if (url.indexOf("login.html") > -1) {
-    alert("login");
+    var user = JSON.parse(localStorage.getItem('user'));
+    console.log(user);
 }
 
 if (url.indexOf('index.html') > -1) {

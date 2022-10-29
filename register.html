@@ -39,7 +39,7 @@
                 </div>
                 <div class="mb-3 mx-0 mx-lg-5">
                     <label for="email" class="form-label fw-bold">Email</label>
-                    <input type="email" class="form-control mb-2" id="email" placeholder="Please enter your email, ex: name@email.com" aria-describedby="emailHelp">
+                    <input type="email" class="form-control mb-2" id="email" placeholder="Please enter your email, ex: name@email.com">
                     <span class="text-danger" id="emailError"></span>
                 </div>
                 <div class="mb-3 mx-0 mx-lg-5">
@@ -50,9 +50,35 @@
                 <div class="mb-5 mx-0 mx-lg-5">
                     <label for="passwordValidation" class="form-label fw-bold">Verify Password</label>
                     <input type="password" class="form-control mb-2" id="passwordValidation" placeholder="Please enter your password again">
+                    <span class="text-danger" id="passwordValidationError"></span>
                 </div>
                 <input type="submit" class="btn btn-outline-primary rounded-5 px-5 fw-bold" value="Register">
             </form>
+        </div>
+    </div>
+
+    <div class="toast-container position-fixed top-0 start-50 translate-middle-x p-3">
+        <div id="registered" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-header">
+                <img src="assets/icon/icon.png" class="rounded-circle toast-img p-1 me-2" alt="hayujoin">
+                <strong class="me-auto text-primary">Sign Up Success</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+            <div class="toast-body">
+                Account successfully registered! Redirecting to login page...
+            </div>
+        </div>
+    </div>
+
+    <div class="toast-container position-fixed top-0 start-50 translate-middle-x p-3">
+        <div id="errorToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-header bg-danger text-white">
+                <img src="assets/icon/icon.png" class="rounded-circle toast-img-error p-1 me-2" alt="hayujoin">
+                <strong class="me-auto text-white">Sign Up Failed</strong>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+            <div class="toast-body" id="errorText">  
+            </div>
         </div>
     </div>
     
