@@ -198,8 +198,7 @@ h3.text-primary{
     transition: all 0.5s;
 }
 
-.col h1{
-    font: Nunito;
+.col h2{
     font-size: 25px;
     margin-top: 2ex;
     margin-bottom: 3ex;
@@ -219,7 +218,7 @@ h3.text-primary{
     margin-bottom: 5ex;
 }
 
-.footer-list h1{
+.footer-list h2{
     color: #234CAD; 
     font-size: 30px;
 }
@@ -237,6 +236,7 @@ h3.text-primary{
 #pricing {
     color: #234CAD !important;
 }
+
 .input{
     height: auto;
     width: 50%;
@@ -244,12 +244,27 @@ h3.text-primary{
     background-color: #F2F6FF;
     border-radius: 60px;
 }
+
 .bg-btn{
     background-color: #234CAD !important;
     border-radius: 30px;
 }
+
 .fa-angle-right{
     color: #F2F6FF;
+}
+
+.toast-img{
+    background-color: #234CAD !important;
+    height: 20px
+}
+
+.toast-img-error{
+    height: 20px
+}
+
+strong.text-primary{
+    color: #234CAD !important;
 }
 
 @media screen and (max-width: 1400px){
