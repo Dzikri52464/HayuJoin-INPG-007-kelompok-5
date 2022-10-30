@@ -289,18 +289,53 @@ if (url.indexOf('index.html') > -1) {
                 passwordError.innerHTML = "Password can not be empty";
             }
         };
-    } 
 
-    passwordValidation.oninput = function() {
-        if(password.value == passwordValidation.value){
-            passwordError.innerHTML = '';
-            passwordValidationError.innerHTML = '';
-            passwordCheck = true;
-        } else {
-            passwordError.innerHTML = "Password does not match";
-            passwordValidationError.innerHTML = "Password does not match";
+        passwordValidation.oninput = function() {
+            if(password.value == passwordValidation.value){
+                passwordError.innerHTML = '';
+                passwordValidationError.innerHTML = '';
+                passwordCheck = true;
+            } else {
+                passwordError.innerHTML = "Password does not match";
+                passwordValidationError.innerHTML = "Password does not match";
+            }
         }
-    }
+
+        function update(){
+            var errorText = document.getElementById("errorText");
+            var errorToast = document.getElementById("errorToast");
+            if (usernameCheck){
+                if (emailCheck){
+                    if (passwordCheck){
+                        user.name = username.value;
+                        user.email = email.value;
+                        user.password = password.value;
+                        localStorage.setItem('user', JSON.stringify(user));
+                        const updateToast = document.getElementById('updated');
+                        const toast = new bootstrap.Toast(updateToast);
+                        toast.show();
+                        loginStatus = 0;
+                        sessionStorage.setItem('loginStatus', loginStatus);
+                        setTimeout(function() {
+                            window.location.href = "login.html";
+                        }, 2000);
+                    } else {
+                        errorText.innerHTML = "Please check your password";
+                        const toast = new bootstrap.Toast(errorToast);
+                        toast.show();
+                    }
+                } else {
+                    errorText.innerHTML = "Please check your email";
+                    const toast = new bootstrap.Toast(errorToast);
+                    toast.show();
+                }
+            } else {
+                errorText.innerHTML = "Please check your username";
+                const toast = new bootstrap.Toast(errorToast);
+                toast.show();
+            }
+        }
+    } 
     
     var plan1 = document.getElementById("plan1");
     var btnPlan1 = document.getElementById("btnPlan1");
@@ -369,41 +404,6 @@ if (url.indexOf('index.html') > -1) {
                 const toast = new bootstrap.Toast(newsletterToast);
                 toast.show();
             }
-        }
-    }
-
-    function update(){
-        var errorText = document.getElementById("errorText");
-        var errorToast = document.getElementById("errorToast");
-        if (usernameCheck){
-            if (emailCheck){
-                if (passwordCheck){
-                    user.name = username.value;
-                    user.email = email.value;
-                    user.password = password.value;
-                    localStorage.setItem('user', JSON.stringify(user));
-                    const updateToast = document.getElementById('updated');
-                    const toast = new bootstrap.Toast(updateToast);
-                    toast.show();
-                    loginStatus = 0;
-                    sessionStorage.setItem('loginStatus', loginStatus);
-                    setTimeout(function() {
-                        window.location.href = "login.html";
-                    }, 2000);
-                } else {
-                    errorText.innerHTML = "Please check your password";
-                    const toast = new bootstrap.Toast(errorToast);
-                    toast.show();
-                }
-            } else {
-                errorText.innerHTML = "Please check your email";
-                const toast = new bootstrap.Toast(errorToast);
-                toast.show();
-            }
-        } else {
-            errorText.innerHTML = "Please check your username";
-            const toast = new bootstrap.Toast(errorToast);
-            toast.show();
         }
     }
 }
