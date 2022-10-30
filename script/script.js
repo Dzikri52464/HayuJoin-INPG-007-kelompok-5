@@ -414,3 +414,17 @@ function logout() {
     sessionStorage.setItem('loginStatus', loginStatus);
     window.location.href = "login.html";
 }
+
+var goToTop = document.querySelector('.go-to-top');
+
+window.addEventListener('scroll', () => {
+  if ( this.scrollY >= 400 ) {
+    goToTop.classList.add('show');
+
+    goToTop.addEventListener('click', () => {
+      window.scrollTo({top: 0});
+    })
+  } else {
+    goToTop.classList.remove('show');
+  }
+});
