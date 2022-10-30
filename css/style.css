@@ -245,6 +245,7 @@ h3.text-primary{
 #pricing {
     color: #234CAD !important;
 }
+
 .go-to-top {
     position: fixed;
     right: 20px;
@@ -258,21 +259,15 @@ h3.text-primary{
     opacity: 0;
     border-radius: 50%;
     transition: .2s ease-in-out;
+    background-image: url(../assets/svg/gototop.svg);
     z-index: 20px;
 }
+
 .go-to-top.show {
     bottom: 20px;
     opacity: 1;
 }
-.go-to-top svg {
-    width: 20px;
-    height: 20px;
-    fill: none;
-    stroke: #ffffff;
-    stroke-width: 1px;
-    stroke-linejoin: round;
-    stroke-linecap: round;
-}
+
 .input{
     height: auto;
     width: 50%;
@@ -287,6 +282,10 @@ h3.text-primary{
 }
 
 .fa-angle-right{
+    color: #F2F6FF;
+}
+
+.fa-angle-up{
     color: #F2F6FF;
 }
 
