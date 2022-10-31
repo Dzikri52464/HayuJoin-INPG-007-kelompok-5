@@ -260,7 +260,7 @@ h3.text-primary{
     border-radius: 50%;
     transition: .2s ease-in-out;
     background-image: url(../assets/svg/gototop.svg);
-    z-index: 20px;
+    z-index: 3;
 }
 
 .go-to-top.show {

@@ -5,8 +5,8 @@ if (url.indexOf("register.html") > -1) {
         name: '',
         email: '',
         password: '',
-    }
-    
+    };
+
     var usernameCheck = false;
     var passwordCheck = false;
     var emailCheck = false;
@@ -146,31 +146,42 @@ if (url.indexOf("login.html") > -1) {
     var errorToast = document.getElementById("errorToast");
     
     function login() {
-        if (email.value == user.email){
-            if(password.value == user.password){
-                loginStatus = 1;
-                sessionStorage.setItem('loginStatus', loginStatus);
-                localStorage.setItem('user', JSON.stringify(user));
-                const loginToast = document.getElementById('loggedIn');
-                const toast = new bootstrap.Toast(loginToast);
-                toast.show();
-                setTimeout(function() {
-                    window.location.href = "index.html";
-                }, 2000);
+        if (localStorage.getItem('user') == null) {
+            errorText.innerHTML = "It looks like you haven't registered yet, please register first";
+            const toast = new bootstrap.Toast(errorToast);
+            toast.show();
+        } else if (!email.value == '' || !email.value == null || !password.value == '' || !password.value == null) {
+            if (email.value == user.email){
+                if(password.value == user.password){
+                    loginStatus = 1;
+                    sessionStorage.setItem('loginStatus', loginStatus);
+                    localStorage.setItem('user', JSON.stringify(user));
+                    const loginToast = document.getElementById('loggedIn');
+                    const toast = new bootstrap.Toast(loginToast);
+                    toast.show();
+                    setTimeout(function() {
+                        window.location.href = "index.html";
+                    }, 2000);
+                } else {
+                    errorText.innerHTML = "Password is incorrect";
+                    const toast = new bootstrap.Toast(errorToast);
+                    toast.show();
+                }
             } else {
-                errorText.innerHTML = "Password is incorrect";
+                errorText.innerHTML = "Email not found, please sign up";
                 const toast = new bootstrap.Toast(errorToast);
                 toast.show();
             }
         } else {
-            errorText.innerHTML = "Email not found";
+            errorText.innerHTML = "Please fill in all fields";
             const toast = new bootstrap.Toast(errorToast);
             toast.show();
         }
     }
 }
 
-if (url.indexOf('index.html') > -1) {
+var origin = window.location.origin + "/";
+if (url.indexOf("index.html") > -1 || url == origin) {
     var user = JSON.parse(localStorage.getItem('user'));
     var loginStatus = sessionStorage.getItem('loginStatus');
     var userNav = document.getElementById("userNav");
@@ -289,7 +300,7 @@ if (url.indexOf('index.html') > -1) {
                 passwordError.innerHTML = "Password can not be empty";
             }
         };
-
+        
         passwordValidation.oninput = function() {
             if(password.value == passwordValidation.value){
                 passwordError.innerHTML = '';
@@ -300,7 +311,7 @@ if (url.indexOf('index.html') > -1) {
                 passwordValidationError.innerHTML = "Password does not match";
             }
         }
-
+        
         function update(){
             var errorText = document.getElementById("errorText");
             var errorToast = document.getElementById("errorToast");
@@ -418,13 +429,13 @@ function logout() {
 var goToTop = document.querySelector('.go-to-top');
 
 window.addEventListener('scroll', () => {
-  if ( this.scrollY >= 400 ) {
-    goToTop.classList.add('show');
-
-    goToTop.addEventListener('click', () => {
-      window.scrollTo({top: 0});
-    })
-  } else {
-    goToTop.classList.remove('show');
-  }
+    if ( this.scrollY >= 400 ) {
+        goToTop.classList.add('show');
+        
+        goToTop.addEventListener('click', () => {
+            window.scrollTo({top: 0});
+        })
+    } else {
+        goToTop.classList.remove('show');
+    }
 });
