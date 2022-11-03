@@ -14,8 +14,8 @@
   <header>
     <nav class="navbar navbar-expand-lg py-3">
       <div class="container">
-        <a class="navbar-brand fw-bold text-primary d-none d-lg-block" href="#">HayuJoin</a>
-        <a class="navbar-brand fw-bold text-primary d-block d-lg-none" href="#"><span class="d-none">-</span><img src="assets/icon/icon.png" alt="" class="logo bg-primary rounded-circle p-1 mb-3"></a>
+        <a class="navbar-brand fw-bold text-primary d-none d-lg-block" href="#" data-bs-toggle="modal" data-bs-target="#getApp">HayuJoin</a>
+        <a class="navbar-brand fw-bold text-primary d-block d-lg-none" href="#"  data-bs-toggle="modal" data-bs-target="#getApp"><span class="d-none">-</span><img src="assets/icon/icon.png" alt="" class="logo bg-primary rounded-circle p-1 mb-3"></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span><i class="fa-solid fa-bars text-primary"></i></span>
         </button>
@@ -53,7 +53,7 @@
             </div>
             <h2 class="display-5 fw-bold mb-3">Business Communication Reinvented</h2>
             <p class="mb-5">Start communicating with your business team more efficiently with our app.</p>
-            <a href="#" class="btn btn-outline-primary fw-semibold rounded-5 px-5 me-2">Get the app</a>
+            <a href="#" class="btn btn-outline-primary fw-semibold rounded-5 px-5 me-2"  data-bs-toggle="modal" data-bs-target="#getApp">Get the app</a>
           </div>
           <div class="d-none d-lg-block col-4 ms-5">
             <img src="assets/svg/Jumbotron.svg" alt="Jumbotron" class="svg-jumbotron">
@@ -99,12 +99,12 @@
           <div class="d-block d-xl-none jumbotron p-5 rounded-5">
             <h2 class="display-5 fw-bold mb-3">Use our app to send messages to your team</h2>
             <p class="mb-5">We offer really easy communications for all businesses from small to large.</p>
-            <a href="#" class="btn btn-outline-primary fw-semibold rounded-5 px-5 me-2">Get the app</a>
+            <a href="#" class="btn btn-outline-primary fw-semibold rounded-5 px-5 me-2" data-bs-toggle="modal" data-bs-target="#getApp">Get the app</a>
           </div>
           <div class="d-none d-xl-block">
             <h2 class="display-5 fw-bold mb-3">Use our app to send messages to your team</h2>
             <p class="mb-5">We offer really easy communications for all businesses from small to large.</p>
-            <a href="#" class="btn btn-outline-primary fw-semibold rounded-5 px-5 me-2">Get the app</a>
+            <a href="#" class="btn btn-outline-primary fw-semibold rounded-5 px-5 me-2" data-bs-toggle="modal" data-bs-target="#getApp">Get the app</a>
           </div>
         </div>
       </div>
@@ -144,12 +144,12 @@
           <div class="d-block d-xl-none jumbotron p-5 rounded-5">
             <h2 class="display-5 fw-bold mb-3">Increase the efficiency within your company</h2>
             <p class="mb-5">Our app is the great way for you to start getting more tasks done.</p>
-            <a href="#" class="btn btn-outline-primary fw-semibold rounded-5 px-5 me-2">Get the app</a>
+            <a href="#" class="btn btn-outline-primary fw-semibold rounded-5 px-5 me-2" data-bs-toggle="modal" data-bs-target="#getApp">Get the app</a>
           </div>
           <div class="d-none d-xl-block">
             <h2 class="display-5 fw-bold mb-3">Increase the efficiency within your company</h2>
             <p class="mb-5">Our app is the great way for you to start getting more tasks done.</p>
-            <a href="#" class="btn btn-outline-primary fw-semibold rounded-5 px-5 me-2">Get the app</a>
+            <a href="#" class="btn btn-outline-primary fw-semibold rounded-5 px-5 me-2" data-bs-toggle="modal" data-bs-target="#getApp">Get the app</a>
           </div>
         </div>
         <div class="d-none d-xl-block col-5 p-0 my-auto">
@@ -170,19 +170,19 @@
           <h2 class="mb-4">Basic</h2>
           <p class="display-5 fw-bold mb-3 plan">$9</p>
           <p>Per month</p>
-          <a href="#" class="btn fw-bold rounded-5 px-5 py-3 plan-btn" id="btnPlan1">Learn more</a>
+          <a href="#" class="btn fw-bold rounded-5 px-5 py-3 plan-btn" id="btnPlan1" data-bs-toggle="modal" data-bs-target="#getApp">Learn more</a>
         </div>
         <div class="col-12 col-lg-3 py-5 mx-auto mx-md-3 my-3 plan-bg" id="plan2">
           <h2 class="mb-4">Premium</h2>
           <p class="display-5 fw-bold mb-3 plan">$29</p>
           <p>Per month</p>
-          <a href="#" class="btn fw-bold rounded-5 px-5 py-3 plan-btn" id="btnPlan2">Learn more</a>
+          <a href="#" class="btn fw-bold rounded-5 px-5 py-3 plan-btn" id="btnPlan2" data-bs-toggle="modal" data-bs-target="#getApp">Learn more</a>
         </div>
         <div class="col-12 col-lg-3 py-5 mx-auto mx-md-3 my-3 plan-bg" id="plan3">
           <h2 class="mb-4">Enterprise</h2>
           <p class="display-5 fw-bold mb-3 plan">$129</p>
           <p>Per month</p>
-          <a href="#" class="btn fw-bold rounded-5 px-5 py-3 plan-btn" id="btnPlan3">Learn more</a>
+          <a href="#" class="btn fw-bold rounded-5 px-5 py-3 plan-btn" id="btnPlan3" data-bs-toggle="modal" data-bs-target="#getApp">Learn more</a>
         </div>
       </div>
     </div>
@@ -311,6 +311,42 @@
     </div>
   </div>
   
+  <div class="modal fade glass" id="getApp" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5 text-primary fw-bold" id="updateModalLabel">Get the app</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="mb-3 mx-0 mx-lg-3">
+            <div class="row justify-content-center">
+              <div class="col-2 my-auto text-end">
+                <img src="assets/icon/icon.png" alt="" class="logo bg-primary rounded-circle p-1 mb-3">
+              </div>
+              <div class="col-4 my-auto">
+                <h2 class="fw-bold fs-3 text-primary">Hayu Join</h2>
+              </div>
+            </div>
+            <img src="assets/svg/Jumbotron.svg" alt="app" class="img-fluid">
+            <div class="row">
+              <div class="col-6">
+                <a href="https://play.google.com/store/apps/details?id=me.pou.app&hl=id&gl=US" target="_blank">
+                  <img src="assets/svg/PlayStore.svg" alt="PlayStore" class="img-fluid">
+                </a>
+              </div>
+              <div class="col-6">
+                <a href="https://apps.apple.com/us/app/pou/id575154654" target="_blank">
+                  <img src="assets/svg/AppStore.svg" alt="AppStore" class="img-fluid">
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
   <div class="toast-container position-fixed top-0 start-50 translate-middle-x p-3">
     <div id="updated" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
       <div class="toast-header">
@@ -336,7 +372,7 @@
     </div>
   </div>
   <div class='go-to-top' onclick='window.scrollTo({top: 0})'>
-  <i class="fa fa-angle-up"></i>
+    <i class="fa fa-angle-up"></i>
   </div>
   
   <script src="script/script.js"></script>

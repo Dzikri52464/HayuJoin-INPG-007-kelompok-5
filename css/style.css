@@ -9,6 +9,11 @@ a .bg-primary{
     height: 40px;
 }
 
+img.bg-primary{
+    background-color: #234CAD !important;
+    height: 40px;
+}
+
 .nav-item{
     border-bottom: 2px solid #fff;
 }
@@ -296,6 +301,14 @@ h3.text-primary{
 
 .toast-img-error{
     height: 20px
+}
+
+h1.text-primary{
+    color: #234CAD !important;
+}
+
+h2.text-primary{
+    color: #234CAD !important;
 }
 
 strong.text-primary{

@@ -31,17 +31,25 @@ if (url.indexOf("register.html") > -1) {
         var usernameError = document.getElementById("usernameError");
         if (!username.value == '') {
             if (username.value.match(min5) && username.value.match(max10)) {
-                if (!username.value.match(space) && !username.value.match(specialCharacters)) {
-                    usernameError.innerHTML = '';
-                    usernameCheck = true;
-                } else {
-                    usernameError.innerHTML = "Username can not contain space and special characters";
-                }
+                if (username.value.match(numbers) && username.value.match(lowerCaseLetters)) {
+                    if (!username.value.match(space) && !username.value.match(specialCharacters)) {
+                        usernameError.innerHTML = '';
+                        usernameCheck = true;
+                    } else {
+                        usernameError.innerHTML = "Username can not contain space and special characters";
+                        usernameCheck = false;
+                    }
+                } else{
+                    usernameError.innerHTML = "Username must contain at least one number and one letter";
+                    usernameCheck = false;
+                }                
             } else {
                 usernameError.innerHTML = 'Username must be between 5 and 10 characters';
+                usernameCheck = false;
             }
         } else {
             usernameError.innerHTML = "Username cannot be empty";
+            usernameCheck = false;
         }
     }
     
@@ -53,9 +61,11 @@ if (url.indexOf("register.html") > -1) {
                 emailCheck = true;
             } else {
                 emailError.innerHTML = "Email is not valid";
+                emailCheck = false;
             }
         } else {
             emailError.innerHTML = "Email cannot be empty";
+            emailCheck = false;
         }
     }
     
@@ -75,32 +85,43 @@ if (url.indexOf("register.html") > -1) {
                                 } else {
                                     passwordError.innerHTML = "Password does not match";
                                     passwordValidationError.innerHTML = "Password does not match";
+                                    passwordCheck = false;
                                     passwordValidation.oninput = function() {
                                         if(password.value == passwordValidation.value){
                                             passwordError.innerHTML = '';
                                             passwordValidationError.innerHTML = '';
                                             passwordCheck = true;
+                                        } else {
+                                            passwordError.innerHTML = "Password does not match";
+                                            passwordValidationError.innerHTML = "Password does not match";
+                                            passwordCheck = false;
                                         }
                                     }
                                 }
                             }else{
                                 passwordError.innerHTML = "Password can not contain space and special characters";
+                                passwordCheck = false;
                             }
                         } else {
                             passwordError.innerHTML = "Password must be between 6 and 12 characters";
+                            passwordCheck = false;
                         }
                     } else {
                         passwordError.innerHTML = "Password must contain at least one number";
+                        passwordCheck = false;
                     }
                 } else {
                     passwordError.innerHTML = "Password must contain at least one uppercase letter";
+                    passwordCheck = false;
                 }
             }
             else {
                 passwordError.innerHTML = "Password must contain at least one lowercase letter";
+                passwordCheck = false;
             }
         } else {
             passwordError.innerHTML = "Password can not be empty";
+            passwordCheck = false;
         }
     };
     
